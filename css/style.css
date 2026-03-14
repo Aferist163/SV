@@ -82,7 +82,7 @@ body {
     font-size: var(--small_font);
 }
 
-body::before {
+html::before {
     content: "";
     position: fixed; 
     top: 0;
