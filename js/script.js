@@ -40,3 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initial language load
   loadLanguage('pl');
 });
+
+var bg = document.getElementById("bg1");
+
+function resizeBackground() {
+    if (bg) {
+        // window.innerHeight — это текущая высота экрана
+        bg.style.height = (window.innerHeight + 60) + "px";
+    }
+}
+
+// Слушаем событие изменения размера окна
+window.addEventListener('resize', resizeBackground);
+
+// Запускаем один раз при загрузке
+resizeBackground();
