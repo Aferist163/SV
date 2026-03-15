@@ -84,18 +84,22 @@ body {
     font-size: var(--small_font);
 }
 
-html::before {
-    content: "";
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: calc(100dvh + 100px);
-    z-index: -1; 
-    background: url('../img/UndergroundJungle.avif') center/cover no-repeat;
+#bg1 {
+    background: url('../img/UndergroundJungle.avif');
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; position:fixed;
+    width:100%;
+    left:0px;
+    top:0px;
+    z-index:-1;
     image-rendering: pixelated;
-    -ms-interpolation-mode: nearest-neighbor; 
 }
+
 
 .resume {
     width: calc(min(1690px, 100%) - 60px);
