@@ -35,6 +35,7 @@ html {
 html, body {
     scrollbar-width: none; 
     -ms-overflow-style: none; 
+    height: 100%;
 }
 
 body {
