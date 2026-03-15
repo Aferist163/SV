@@ -25,6 +25,7 @@
 
 html {
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 *, *::before, *::after {
@@ -35,6 +36,10 @@ html, body {
     scrollbar-width: none; 
     -ms-overflow-style: none; 
 }
+
+body {
+    overflow-y: scroll;
+    -webkit-overflow-scrolling:touch;
 
 body::-webkit-scrollbar {
     display: none; 
