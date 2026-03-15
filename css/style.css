@@ -82,17 +82,22 @@ body {
     font-size: var(--small_font);
 }
 
-html::before {
-    content: "";
-    position: fixed; 
+.bg-fixed {
+    position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100svh;
-    z-index: -1; 
-    background: url('../img/UndergroundJungle.avif') center/cover no-repeat;
+    width: 100vw;
+    /* Используем -webkit-fill-available для старых iOS */
+    height: 100vh; 
+    height: 100dvh;
+    z-index: -1;
+    background: url('../img/UndergroundJungle.avif') center center / cover no-repeat;
     image-rendering: pixelated;
-    -ms-interpolation-mode: nearest-neighbor; 
+    /* Хаки для iOS, чтобы заставить видеокарту держать слой */
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    /* Убираем возможные зазоры */
+    pointer-events: none; 
 }
 
 .resume {
