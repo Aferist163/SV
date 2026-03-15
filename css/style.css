@@ -93,16 +93,16 @@ body {
 }
 
 html::before {
-  content: "";
-  position: fixed;
-    /* Вместо height задаем все направления */
+    content: "";
+    position: fixed; 
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-  background: url('../img/UndergroundJungle.avif') center/cover no-repeat;
-  image-rendering: pixelated;
+    width: 100%;
+    height: calc(100dvh + 100px);
+    z-index: -1; 
+    background: url('../img/UndergroundJungle.avif') center/cover no-repeat;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor; 
 }
 
 .resume {
