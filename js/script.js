@@ -1,30 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
-  // Get wrapper first
   const wrapper = document.querySelector('.selectWrapper');
   const select = wrapper.querySelector('.custom-select');
   const selected = wrapper.querySelector('.selected');
   const options = select.querySelectorAll('.options li');
 
-  // Show dropdown on hover
-  select.addEventListener('mouseenter', () => {
-    select.classList.add('open');
+  selected.addEventListener('click', (e) => {
+    e.stopPropagation(); 
+    select.classList.toggle('open');
   });
 
-  select.addEventListener('mouseleave', () => {
+  document.addEventListener('click', () => {
     select.classList.remove('open');
   });
 
-  // Handle option clicks
   options.forEach(opt => {
     opt.addEventListener('click', () => {
-      const lang = opt.getAttribute('data-value') || opt.innerText.toLowerCase(); // fallback
-      selected.innerText = opt.innerText; // Update displayed selected value
-      select.classList.remove('open');
+      const lang = opt.getAttribute('data-value') || opt.innerText.toLowerCase(); 
+      selected.innerText = opt.innerText; 
+      select.classList.remove('open'); 
       loadLanguage(lang);
     });
   });
 
-  // Load language translations
   function loadLanguage(lang) {
     fetch(`./locales/${lang}.json`)
       .then(res => res.json())
@@ -37,6 +34,5 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch(err => console.error("Error loading language file:", err));
   }
 
-  // Initial language load
   loadLanguage('pl');
 });
