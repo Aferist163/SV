@@ -595,7 +595,7 @@ header section li a::before, .skills_list li::before{
     position: relative;
     height: 50px;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
 }
 
 .custom-select {
@@ -610,7 +610,7 @@ header section li a::before, .skills_list li::before{
     flex-direction: column;
     overflow: hidden;
     transition: height 0.3s ease;
-    z-index: 2;
+    z-index: 3;
 }
 
 .selected {
@@ -620,7 +620,7 @@ header section li a::before, .skills_list li::before{
     width: 100%;
     height: 100%; 
     color: var(--title_color);
-    z-index: 3;
+    z-index: 4;
     pointer-events: none;
 }
 
